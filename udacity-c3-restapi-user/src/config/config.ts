@@ -1,18 +1,23 @@
 export const config = {
   "dev": {
-    "username": "udgramnkambwedev",
-    "password": "skylite=2011",
-    "database": "udgramnkambwedev",
-    "host": "udgramnkambwedev.c5zwmtlztbwe.us-east-1.rds.amazonaws.com",
+    "username": process.env.POSTGRESS_USERNAME,
+    "password": process.env.POSTGRESS_PASSWORD,
+    "database": process.env.POSTGRESS_DATABASE,
+    "host": process.env.POSTGRESS_HOST,
+    "dialect": "postgres",
+    "aws_reigion": process.env.AWS_REGION,
+    "aws_profile": process.env.AWS_PROFILE,
+    "aws_media_bucket": process.env.AWS_MEDIA_BUCKET
+  },
+  "prod": {
+    "username": "",
+    "password": "",
+    "database": "udagram_prod",
+    "host": "",
     "dialect": "postgres"
-
   },
-  "aws": {
-    "aws_region": "us-east-1",
-    "aws_profile": "default",
-    "aws_media_bucket": "udagram-nkambw-dev"
-  },
-  "jwt":{
-    "secret":"mysecret"
+  "jwt": {
+    "secret": process.env.JWT_SECRET
   }
+
 }
