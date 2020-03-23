@@ -1,7 +1,7 @@
 version: "3"
 services:
   reverseproxy:
-      image: sudkul/reverseproxy
+      image: nkambwe/udacity-proxy
       ports:
           - 8080:8080
       restart: always
@@ -37,6 +37,6 @@ services:
       JWT_SECRET: $JWT_SECRET
       URL: "http://localhost:8100"
   frontend:
-    image: nkambwe/udacity-front:local
+    image: nkambwe/udacity-frontend:local
     ports:
       - "8100:80"
